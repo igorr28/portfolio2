@@ -1,0 +1,31 @@
+.slider {
+    width: 66.08%;
+    position: relative;
+    margin-right: 10.54%;
+
+    &__preview {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__previews-item {
+        outline: 3px solid transparent;
+    }
+
+    &__btns {
+        position: absolute;        
+        right: 0;
+        top: 100%;
+    }
+
+    &__btn {
+        width: 50px;
+        height: 50px;
+        background-color: #353e4e;
+    }
+}
+
+.active.slider__previews-item {
+    outline-color: #dc9322;
+}
