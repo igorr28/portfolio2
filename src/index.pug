@@ -10,43 +10,70 @@ html(lang="en")
   body
     .wrapper
       .wrapper__content 
+
         .two-sections
         
           //First-screen            
 
           section.first-screen
-            .container
-
+            .container.first-screen__container
               //Header
-
               header.header
                 .logo
                   a(href="#").logo__link ИР
-                nav.main-menu
+                nav.main-menu.header__menu
                   - var menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться']
                   ul.main-menu__list
-                    each item in menu
-                      li.main-menu__item
-                        a(href="").main-menu__link #{item}
+                    each item,index in menu
+                      li.main-menu__item(class=`${index === 1 ? 'active' : ''}`)
+                        a(href="" class = "").main-menu__link #{item}
                 .socials
                    - var socials = ['insta', 'vk', 'github']
                    ul.socials__list
                     each item in socials
                       li.socials__item
                         a(href="#").socials__link
-                          +icon(`${item}`, 'socials__icon')               
+                          +icon(`${item}`, `socials__icon socials__icon--${item}`)        
 
               // Content
               .first-screen__content
                 .info
-                  h1.info__title Личный сайт веб-разработчика
+                  h1.info__title Личный сайт веб&#8209;разработчика
                   .info__name Игорь Ребрищев
               .first-screen__btn
-                a(href="").scroll-link
+                a(href="#").scroll-link
                   span.scroll-link__text Скролл
                   +icon(`scroll`, 'scroll-link__icon')
 
+          //About
           section.about
+            .container.about__container
+              .about__left
+                .avatar.about__avatar
+                  +image('content/about-avatar.jpg', 'about__img')
+                
+                table.about__table
+                  - var items = [['Проживаю:', 'Ростов-на-Дону'],['Возраст:', '40'],['Родился:', '28 июня 1979']]
+                  
+                  each item in items
+                    tr.about__table-row
+                      td.about__column.about__column--left #{item[0]}
+                      td.about__column.about__column--right #{item[1]}
+
+              .about__right
+                .about__hello Привет, меня зовут
+                .about__title.h2-title Игорь Ребрищев
+                .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+          //values
+          section.values
+          
+
+
+                
+
+      
           
           
           
