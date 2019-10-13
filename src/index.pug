@@ -24,7 +24,7 @@ html(lang="en")
                 nav.main-menu.header__menu
                   - var menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться']
                   ul.main-menu__list
-                    each item,index in menu
+                    each item, index in menu
                       li.main-menu__item(class=`${index === 1 ? 'active' : ''}`)
                         a(href="" class = "").main-menu__link #{item}
                 .socials
@@ -77,9 +77,37 @@ html(lang="en")
         section.values
           .container.values__container
             .values__desc
-              h3.values__title.h3-title Чем я могу быть полезен вам
+              h2.values__title.h3-title Чем я могу быть полезен вам
               .values__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
             .skills
+
+        //Works
+        section.works
+          .container
+            h2.works__title.h2-title Мои работы
+            .works__content
+              .slider
+                .slider__full-pic
+                  +image(`content/1.jpg`, 'slider__full-img')
+                .slider__preview
+                  ul.slider__preview-list
+                    - for (var i = 0; i < 4; i++)
+                      li.slider__previews-item(class=`${i === 0 ? 'active' : ''}`)
+                        +image(`content/prev-${i}.jpg`, 'slider__preview-img')
+                .slider__btns
+                  button.slider__btn.slider__btn--prev 
+                  button.slider__btn.slider__btn--next
+              .works__desc
+                .works__tags
+                  - var tags = ['html', 'css', 'javascript']
+                  ul.works__tags-list
+                    each tag in tags
+                      li.works__tags-item #{tag}
+                h3.works__desc-title Сайт школы образования
+                .works__desc-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a(href="#").works__desc-link.link
+                  +icon('link', 'link__icon')
+                  span.link__text Посмотреть сайт
 
 
 
