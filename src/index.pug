@@ -62,13 +62,25 @@ html(lang="en")
 
               .about__right
                 .about__hello Привет, меня зовут
-                .about__title.h2-title Игорь Ребрищев
+                h2.about__title.h2-title Игорь Ребрищев
                 .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        
+        //Triangles
+        .triangles
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,0 0,100 1000,100")
+          svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,100 1000,100 1000,0")
 
-          //values
-          section.values
-          
+        //values
+        section.values
+          .container.values__container
+            .values__desc
+              h3.values__title.h3-title Чем я могу быть полезен вам
+              .values__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            .skills
+
 
 
                 
