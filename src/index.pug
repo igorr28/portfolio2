@@ -118,10 +118,10 @@ html(lang="en")
               polygon(points="0,0 1000,0 500,100")
           
           //Reviews
-          .section.reviews
+          section.reviews
             .container
               .reviews__row
-                .reviews__title.h2-title Что обо мне говорят
+                h2.reviews__title.h2-title Что обо мне говорят
                 .reviews__btns
                   button.reviews__btn
                     +icon('arrow-down', 'reviews__btn-icon reviews__btn-icon--prev') 
@@ -140,6 +140,30 @@ html(lang="en")
                             .reviews__user-desc
                               .reviews__user-name #{item[0]}
                               .reviews__user-occ #{item[1]}
+
+          //Form
+          section.form-section
+            .container
+              h2.form-section__title.h2-title Связаться со мной
+              form.form(action="" name="form")
+                .form__row
+                  .form__item
+                    label(for="name").form__label Введите ваше имя
+                    input(type="text" id="name" name="name").form__input
+                  .form__item
+                    label(for="email").form__label Введите ваш email
+                    input(type="email" id="email" name="email").form__input
+                .form__row
+                  .form__item
+                   label(for="comment").form__label Сообщение к письму
+                   textarea(id="comment" name="comment").form__input.form__textarea
+                .form__row
+                  button(type="submit").form__submit Отправить
+
+                
+                  
+
+
                        
                 
 

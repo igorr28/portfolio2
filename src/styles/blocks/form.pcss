@@ -1,0 +1,84 @@
+.form-section {
+    padding: 128px 0 134px 0;
+
+    &__title {
+        margin-bottom: 84px;
+    }
+}
+
+.form {
+    width: 60%;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        margin: 0 -3.5%;
+        margin-bottom: 34px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item {
+        margin: 0 3.5%; 
+        flex-grow: 1;  
+    }
+
+    &__label {
+        display: block;
+        color: rgba(#464d62, .3);
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding-left: 46px;
+
+    }
+
+    &__input {
+        color: #464d62;        
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 2;
+        padding: 8px 46px;
+        border: none;
+        background-color: transparent;
+        border-bottom: 2px solid #464d62;
+        width: 100%;
+        background: svg-load('../../images/icons/quote.svg', fill=rgba(#464d62, .05)) center left no-repeat;
+        background-size: 18%;
+        outline: none;
+
+        &[name="name"] {
+            background: svg-load('../../images/icons/user.svg', fill=rgba(#464d62, .3), width=26px,height=30px) center left no-repeat;        
+        }
+
+        &[name="email"] {
+            background: svg-load('../../images/icons/envelope.svg', fill=rgba(#464d62, .3), width=30px,height=23px) center left no-repeat;        
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        background: svg-load('../../images/icons/message.svg', fill=rgba(#464d62, .3), width=30px,height=30px) top left no-repeat;
+        outline: none;
+    }
+
+    &__submit {
+        margin: 0 3.5%;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 2;
+        text-transform: uppercase;
+        padding: 25px 120px;
+        border-radius: 40px 5px;        
+        background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
+        margin-top: 60px;
+        outline: none;
+        transition: 0.3s;
+
+        &:hover {
+            background-image: linear-gradient(to right, #bb00ff 0%, #5900ff 100%);
+        }
+    }
+}
