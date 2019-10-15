@@ -13,8 +13,7 @@ html(lang="en")
 
         .two-sections
         
-          //First-screen            
-
+          //First-screen 
           section.first-screen
             .container.first-screen__container
               //Header
@@ -93,10 +92,13 @@ html(lang="en")
                   ul.slider__preview-list
                     - for (var i = 0; i < 4; i++)
                       li.slider__previews-item(class=`${i === 0 ? 'active' : ''}`)
-                        +image(`content/prev-${i}.jpg`, 'slider__preview-img')
+                        a(href="#").slider__previews-link
+                          +image(`content/prev-${i}.jpg`, 'slider__preview-img')
                 .slider__btns
-                  button.slider__btn.slider__btn--prev 
+                  button.slider__btn.slider__btn--prev
+                    +icon('arrow-down', 'slider__btn-icon slider__btn-icon--prev') 
                   button.slider__btn.slider__btn--next
+                    +icon('arrow-down', 'slider__btn-icon slider__btn-icon--next')
               .works__desc
                 .works__tags
                   - var tags = ['html', 'css', 'javascript']
