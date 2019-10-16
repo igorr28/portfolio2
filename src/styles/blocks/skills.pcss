@@ -1,7 +1,61 @@
-.skills {
-    /* margin-left: 42.56%; */
-    outline: 1px solid red;
-    height: 470px;
-    width: 51.08%;
-    margin-left: 630px;
+.skill {
+    width: 200px;
+    height: 200px;
+    fill: transparent;
+    position: relative;
+
+    &__circle {
+        &--under {
+            stroke: #eaeaea;
+            stroke-width: 10px;
+        }
+
+        &--above {
+            stroke-dasharray: 421;
+            stroke-width: 20px;
+            animation: animateSkills 100s linear infinite;
+            animation-play-state: paused;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);        
+        color: rgba(#464d62, 0.5);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 2;
+    }
+
+    
+}
+
+@keyframes animateSkills {
+        from {
+            stroke-dashoffset: 421;
+        }
+         to {
+            stroke-dashoffset: 0;
+        }
+    }
+    
+.skills-row {
+
+    &__title {
+        font-size: 24px;
+font-weight: 700;
+line-height: 2;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    }
+
+.skills-wrap {
+    margin-left: 42%;
 }
