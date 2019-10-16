@@ -43,17 +43,31 @@
         border: none;
         background-color: transparent;
         border-bottom: 2px solid #464d62;
-        width: 100%;
-        background: svg-load('../../images/icons/quote.svg', fill=rgba(#464d62, .05)) center left no-repeat;
-        background-size: 18%;
+        width: 100%;        
         outline: none;
+        transition: 0.3s;
 
         &[name="name"] {
-            background: svg-load('../../images/icons/user.svg', fill=rgba(#464d62, .3), width=26px,height=30px) center left no-repeat;        
+            background: svg-load('../../images/icons/user.svg', fill=rgba(#464d62, .3), width=26px,height=30px) center left no-repeat; 
+
+            &:hover,
+        &:focus {
+              background: svg-load('../../images/icons/user.svg', fill=#5500f2, width=26px,height=30px) center left no-repeat;
+            }       
         }
 
         &[name="email"] {
-            background: svg-load('../../images/icons/envelope.svg', fill=rgba(#464d62, .3), width=30px,height=23px) center left no-repeat;        
+            background: svg-load('../../images/icons/envelope.svg', fill=rgba(#464d62, .3), width=30px,height=23px) center left no-repeat; 
+
+            &:hover,
+        &:focus {
+               background: svg-load('../../images/icons/envelope.svg', fill=#5500f2, width=30px,height=23px) center left no-repeat;
+            }          
+        }
+
+        &:hover,
+        &:focus {
+             border-bottom-color: #5500f2;
         }
     }
 
@@ -61,6 +75,11 @@
         width: 100%;
         background: svg-load('../../images/icons/message.svg', fill=rgba(#464d62, .3), width=30px,height=30px) top left no-repeat;
         outline: none;
+
+        &:hover,
+        &:focus {
+              background: svg-load('../../images/icons/message.svg', fill=#5500f2, width=30px,height=30px) top left no-repeat;
+            }   
     }
 
     &__submit {

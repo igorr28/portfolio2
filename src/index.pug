@@ -113,9 +113,10 @@ html(lang="en")
                           +image(`content/prev-${i}.jpg`, 'slider__preview-img')
                 .slider__btns
                   button.slider__btn.slider__btn--prev
-                    +icon('arrow-down', 'slider__btn-icon slider__btn-icon--prev') 
+                    +icon('arrow-down', 'slider__btn-icon slider__btn-icon--prev')
                   button.slider__btn.slider__btn--next
                     +icon('arrow-down', 'slider__btn-icon slider__btn-icon--next')
+                .slider__number 4
               .works__desc
                 .works__tags
                   - var tags = ['html', 'css', 'javascript']
@@ -166,14 +167,14 @@ html(lang="en")
                 .form__row
                   .form__item
                     label(for="name").form__label Введите ваше имя
-                    input(type="text" id="name" name="name").form__input
+                    input(type="text" id="name" name="name" placeholder="Ковальчук Дмитрий" onfocus="this.placeholder='';").form__input
                   .form__item
                     label(for="email").form__label Введите ваш email
-                    input(type="email" id="email" name="email").form__input
+                    input(type="email" id="email" name="email" placeholder="loftschool@study.com" onfocus="this.placeholder='';").form__input
                 .form__row
                   .form__item
                    label(for="comment").form__label Сообщение к письму
-                   textarea(id="comment" name="comment").form__input.form__textarea
+                   textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" onfocus="this.placeholder='';").form__input.form__textarea
                 .form__row
                   button(type="submit").form__submit Отправить
 

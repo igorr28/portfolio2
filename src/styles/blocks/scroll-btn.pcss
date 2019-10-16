@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     padding: 10px;
+    transition: 0.3s;
 
     &__text {
         margin-right: 8px;
@@ -10,5 +11,13 @@
     &__icon {
         width: 20px;
         height: 30px;
+    }
+
+    &:hover {
+        color: #5500f2;
+    }
+
+    &:hover .scroll-link__icon{
+        fill: #5500f2;
     }
 }

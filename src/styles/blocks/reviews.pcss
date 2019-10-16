@@ -21,9 +21,19 @@
         justify-content: center;
         margin-right: 30px;
         outline: none;
+        transition: 0.3s;
 
         &:last-child {
             margin-right: 0;
+        }
+
+        &:hover {
+           background-color: #5500f2;
+           border-color: #fff;
+        }
+
+        &:hover .reviews__btn-icon{           
+           fill: #fff;
         }
     }
 
@@ -32,8 +42,7 @@
         height: 12px;
 
         &--prev {
-            transform: rotate(-180deg);
-           
+            transform: rotate(-180deg);           
         }
     }
 
