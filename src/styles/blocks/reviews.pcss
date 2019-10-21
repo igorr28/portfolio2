@@ -1,13 +1,40 @@
 .reviews {
     padding: 258px 0 68px 0;
 
+    @include tab {
+        padding: 250px 0 50px 0;
+    }
+
     &__row {
         display: flex;
         margin-bottom: 100px;
+
+        @include tab {
+        margin-bottom: 55px;
+    }
+
+    @include media(560) {
+            flex-direction: column;
+        }
     }
 
     &__title {
         margin-right: 120px;
+
+        @include tab {
+        margin-right: 30px;
+    }
+
+    @include media(560) {
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+    }
+
+    &__btns {
+        @include media(560) {
+            text-align: center;
+        }
     }
 
     &__btn {
@@ -28,12 +55,12 @@
         }
 
         &:hover {
-           background-color: #5500f2;
-           border-color: #fff;
+            background-color: #5500f2;
+            border-color: #fff;
         }
 
-        &:hover .reviews__btn-icon{           
-           fill: #fff;
+        &:hover .reviews__btn-icon {
+            fill: #fff;
         }
     }
 
@@ -42,41 +69,65 @@
         height: 12px;
 
         &--prev {
-            transform: rotate(-180deg);           
+            transform: rotate(-180deg);
         }
     }
 
     &__items {
         width: 68.11%;
+
+        @include desktop {
+            width: 85%;
+        }
+
+        @include tab {
+        width: 100%;
+    }
     }
 
     &__list {
         width: 100%;
         margin-right: -3%;
         display: flex;
+
+        @include media(560) {
+        
+            margin-right: 0;
+            overflow: hidden;
+        }
     }
 
     &__item {
         width: 47%;
         margin-right: 3%;
-        
+
+        @include media(560) {
+            width: 100%;
+            margin-right: 0; 
+            flex-shrink: 0;          
+        }
+
     }
 
-    &__post {        
+    &__post {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         padding-left: 20%;
         background: svg-load('../../images/icons/quote.svg', fill=rgba(#464d62, .05)) top left no-repeat;
         background-size: 18%;
     }
 
     &__post-text {
-       height: 130px;
+        /* height: 130px; */
         font-weight: 600;
         color: rgba(#464d62, .5);
         margin-bottom: 24px;
-        
+
     }
 
     &__post-user {
+        margin-top: auto;
         display: flex;
         align-items: center;
     }
@@ -95,7 +146,6 @@
     &__user-occ {
         font-weight: 600;
         color: rgba(#464d62, .3);
-        
+
     }
 }
-

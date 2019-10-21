@@ -1,13 +1,9 @@
 html {
-   font-size: 16px;
+  font-size: 16px;
 
-  @include desktop {
-    font-size: 15px;
-  }
-  @include tablets {
-    font-size: 14px;
-  }
+
 }
+
 body,
 html {
   height: 100%;
@@ -21,40 +17,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
   font-weight: 400;
+
+  @include tab {
+    font-size: 14px;
+  }
 }
 
 .wrapper {
-  overflow: hidden;
   min-height: 100%;
-  position: relative;
   display: flex;
   flex-direction: column;
 }
 
 .wrapper__content {
-    flex-grow: 1;
-    position: relative;
-    height: 100%;
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
 }
 
 .clearfix:after {
-    content: " ";
-    display: block;
-    clear: both;
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1480px;
-  min-width: 320px;
-  width: 95%;  
+  min-width: 260px;
+  width: 95%;
 
-  
-}
-
-.fullscreen-section {
-  height: 100vh;
-  min-height: 650px;
+  @include tab {
+    width: 92%;
+  }
 }
 
 button {
@@ -96,30 +91,39 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  
+
 }
 
 img,
 svg {
   display: block;
   max-width: 100%;
-  
+
 }
 
 video {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .h2-title {
-color: #464d62;
-font-size: 36px;
-font-weight: 700;
-line-height: 1.33;
+  color: #464d62;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.33;
+
+  @include tab {
+    font-size: 30px;
+    line-height: 1.6;
+  }
+
+  @include media(520) {
+    font-size: 24px;
+  }
 }
 
 .h3-title {
-color: #464d62;
-font-size: 30px;
-font-weight: 700;
-line-height: 1.2;
+  color: #464d62;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
 }

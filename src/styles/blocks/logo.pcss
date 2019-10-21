@@ -1,6 +1,20 @@
 .logo {
+    transition: 0.3s;
+    
     &__link {
         font-size: 36px;
         font-weight: 800;
+
+         @include media(1000) {
+            font-size: 32px;          
+        } 
+        
+        @include tab {
+            font-size: 36px;          
+        } 
+    }
+
+    &:hover {
+        color: #5500f2;
     }
 }

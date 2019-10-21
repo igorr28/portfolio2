@@ -1,25 +1,102 @@
 .values {
-    background: url(../images/content/values-backpack.png)  22px 258px  no-repeat;
-    
     padding: 151px 0 112px 0;
 
-    &__container {
-        /* padding-left: 34.06%; */
+    @include tab {
+        padding: 110px 0 30px 0;
     }
 
-    &__desc {
-        width: 42.56%;
-        /* margin-left: 34.06%; */
-        margin-left: 504px;
+    &__container {
+        display: flex;
+
+        @include tab {
+            flex-direction: column;
+        }
     }
+
+    &__pic {
+        width: 504px;
+        position: relative;
+
+        @include desktop {
+            width: 250px;
+        }
+
+        @include tab {
+            width: 46%;
+            min-width: 260px;
+            order: 2;
+            position: static;
+            margin: 0 auto;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        left: -135px;
+        bottom: 0;
+        max-width: none;
+
+        @include desktop {
+            left: -300px;
+        }
+
+        @include tab {
+            position: static;
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+        width: calc(100%-504px);
+
+        @include desktop {
+            width: calc(100%-250px);
+        }
+
+        @include tab {
+            width: 100%;
+        }
+
+        @include tab {
+            margin-bottom: 110px;
+        }
+    }
+
+    &__desc {}
 
     &__title {
         margin-bottom: 50px;
+
+        @include tab {
+            width: 260px;
+            text-align: center;
+            margin: 0 auto 16px;
+        }
+
+        @include phones {
+            text-align: left;
+            width: 100%;
+        }
     }
 
     &__text {
+        width: 61%;
         color: rgba(#464d62, .5);
         font-weight: 600;
         margin-bottom: 78px;
+
+        @include desktop {
+            width: 73%;
+        }
+
+        @include tab {
+            width: 67%;
+            margin: 0 auto 50px;
+        }
+
+        @include phones {
+            text-align: left;
+            width: 100%;
+        }
     }
 }

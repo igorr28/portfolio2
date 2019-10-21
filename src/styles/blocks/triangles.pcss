@@ -1,7 +1,7 @@
 .triangles {
   display: flex;
   margin-top: -126px;
-  
+
 }
 
 .triangles__item {
@@ -11,16 +11,20 @@
   fill: #fff;
 }
 
-.triangles-bottom {    
-    position: absolute;
-    top: 30px;
-    left: 0;
-    right: 0;
+.triangles-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 
-    &__item {
-      width: 100%;
-      display: block;
-      height: 126px;
-      fill: #fff;
+  &__item {
+    width: 100%;
+    display: block;
+    height: 126px;
+    fill: #fff;
+
+    @include desktop {
+      height: 50px;
     }
+  }
 }

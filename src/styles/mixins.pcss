@@ -10,7 +10,7 @@
   }
 }
 
-@mixin tablets() {
+@mixin tab() {
   @media screen and (max-width: $bp-tablets) {
     @content;
   }
@@ -21,3 +21,9 @@
     @content;
   }
 }
+
+@mixin media($width) {
+     @media screen and (max-width: #{$width}px) {
+         @content;
+     }
+ }

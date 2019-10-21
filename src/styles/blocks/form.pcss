@@ -1,28 +1,54 @@
 .form-section {
     padding: 128px 0 134px 0;
 
+    @include tab {
+        padding: 60px 0 110px 0;
+    }
+
+    &__container {}
+
     &__title {
         margin-bottom: 84px;
+
+        @include tab {
+            text-align: center;
+            margin-bottom: 45px;
+        }
     }
 }
 
 .form {
     width: 60%;
 
+    @include desktop {
+        width: 85%;
+    }
+
+    @include tab {
+        width: 100%;
+    }
+
     &__row {
         display: flex;
         align-items: center;
-        margin: 0 -3.5%;
-        margin-bottom: 34px;
+        margin: 0 -2.5% 34px;
 
         &:last-child {
             margin-bottom: 0;
-        }
+        } 
+
+        @include media(520) {
+           flex-direction: column;
+        }         
     }
 
     &__item {
-        margin: 0 3.5%; 
-        flex-grow: 1;  
+        margin: 0 2.5%;
+        flex-grow: 1;
+
+        @include media(520) {
+            width: 95%;
+        }  
     }
 
     &__label {
@@ -35,7 +61,7 @@
     }
 
     &__input {
-        color: #464d62;        
+        color: #464d62;
         font-size: 18px;
         font-weight: 700;
         line-height: 2;
@@ -43,43 +69,43 @@
         border: none;
         background-color: transparent;
         border-bottom: 2px solid #464d62;
-        width: 100%;        
+        width: 100%;
         outline: none;
         transition: 0.3s;
 
         &[name="name"] {
-            background: svg-load('../../images/icons/user.svg', fill=rgba(#464d62, .3), width=26px,height=30px) center left no-repeat; 
+            background: svg-load('../../images/icons/user.svg', fill=rgba(#464d62, .3), width=26px, height=30px) center left no-repeat;
 
             &:hover,
-        &:focus {
-              background: svg-load('../../images/icons/user.svg', fill=#5500f2, width=26px,height=30px) center left no-repeat;
-            }       
+            &:focus {
+                background: svg-load('../../images/icons/user.svg', fill=#5500f2, width=26px, height=30px) center left no-repeat;
+            }
         }
 
         &[name="email"] {
-            background: svg-load('../../images/icons/envelope.svg', fill=rgba(#464d62, .3), width=30px,height=23px) center left no-repeat; 
+            background: svg-load('../../images/icons/envelope.svg', fill=rgba(#464d62, .3), width=30px, height=23px) center left no-repeat;
 
             &:hover,
-        &:focus {
-               background: svg-load('../../images/icons/envelope.svg', fill=#5500f2, width=30px,height=23px) center left no-repeat;
-            }          
+            &:focus {
+                background: svg-load('../../images/icons/envelope.svg', fill=#5500f2, width=30px, height=23px) center left no-repeat;
+            }
         }
 
         &:hover,
         &:focus {
-             border-bottom-color: #5500f2;
+            border-bottom-color: #5500f2;
         }
     }
 
     &__textarea {
         width: 100%;
-        background: svg-load('../../images/icons/message.svg', fill=rgba(#464d62, .3), width=30px,height=30px) top left no-repeat;
+        background: svg-load('../../images/icons/message.svg', fill=rgba(#464d62, .3), width=30px, height=30px) top left no-repeat;
         outline: none;
 
         &:hover,
         &:focus {
-              background: svg-load('../../images/icons/message.svg', fill=#5500f2, width=30px,height=30px) top left no-repeat;
-            }   
+            background: svg-load('../../images/icons/message.svg', fill=#5500f2, width=30px, height=30px) top left no-repeat;
+        }
     }
 
     &__submit {
@@ -90,7 +116,7 @@
         line-height: 2;
         text-transform: uppercase;
         padding: 25px 120px;
-        border-radius: 40px 5px;        
+        border-radius: 40px 5px;
         background-image: linear-gradient(to right, #9300e8 0%, #4a00ed 100%);
         margin-top: 60px;
         outline: none;
@@ -99,5 +125,13 @@
         &:hover {
             background-image: linear-gradient(to right, #bb00ff 0%, #5900ff 100%);
         }
+
+        @include tab {
+            margin: 0 auto;
+        }
+
+        @include media(520) {
+           padding: 25px 80px;
+        }  
     }
 }

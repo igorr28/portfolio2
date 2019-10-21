@@ -1,23 +1,58 @@
 .info {
     width: 45%;
 
+    @include desktop {
+        display: inline-flex;
+        justify-content: center;
+        width: auto;
+    }
+
+    @include tab {
+        display: block;
+        width: 300px;
+    }
+
     &__title {
         width: 40%;
         font-size: 18px;
         font-weight: 600;
         color: rgba(#464d62, .4);
         line-height: 1.67;
-        margin: 0 auto;
+        margin: 0 auto 28px;
         text-align: center;
-        margin-bottom: 28px;
+
+
+        @include desktop {
+            flex-basis: 170px;
+            margin: 0 60px 0 0;
+            text-align: right;
+        }
+
+        @include tab {
+            width: 160px;
+            text-align: center;
+            margin: 0 auto 24px;
+            font-size: 15px;
+        }
     }
 
     &__name {
-        text-align: center;    
+        text-align: center;
         font-size: 72px;
         font-weight: 800;
         line-height: 0.83;
         text-transform: uppercase;
+
+        @include desktop {
+            flex-basis: 440px;
+            text-align: left;
+        }
+
+        @include tab {
+            text-align: center;
+            font-size: 48px;
+            line-height: 1;
+        }
     }
 
 }

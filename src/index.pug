@@ -25,14 +25,16 @@ html(lang="en")
                   ul.main-menu__list
                     each item, index in menu
                       li.main-menu__item(class=`${index === 1 ? 'active' : ''}`)
-                        a(href="" class = "").main-menu__link #{item}
+                        a(href="" class = "").main-menu__link.header__menu-link #{item}
                 .socials
                    - var socials = ['insta', 'vk', 'github']
                    ul.socials__list
                     each item in socials
                       li.socials__item
                         a(href="#").socials__link
-                          +icon(`${item}`, `socials__icon socials__icon--${item}`)        
+                          +icon(`${item}`, `socials__icon socials__icon--${item}`) 
+                a.hamburger(href="#")
+                  .hamburger__pic       
 
               // Content
               .first-screen__content
@@ -75,27 +77,30 @@ html(lang="en")
         //values
         section.values
           .container.values__container
-            .values__desc
-              h2.values__title.h3-title Чем я могу быть полезен вам
-              .values__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-            .skills-wrap
-              ul.user-skills        
-                - var skills = [['Front-end', [['HTML5', '-25s'],['CSS3', '-13s'],['JavaScript', '-75s'],['JQuery', '-35s']]],['Workflow', [['Git', '-25s'],['Terminal', '-25s'],['Gulp', '-25s'],['Webpack', '-25s']]]]
-                  each item in skills 
-                    li.user-skills__item.skills-row 
-                      h3.skills-row__title #{item[0]}
-                      ul.skills-row__list
-                        each skill in item[1]
-                            li.skills-row__item
-                              .skill
-                                svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                                  defs.defs
-                                    linearGradient( x1="0%" y1="50%" x2="100%" y2="100%")#skill__gradient
-                                      stop(offset="60%" stop-color="#5500f2").skill__fill--start
-                                      stop(offset="100%" stop-color="#ad00ed").skill__fill--stop  
-                                  circle(r="67" cx="100" cy="100").skill__circle.skill__circle--under
-                                  circle(r="67" cx="100" cy="100" stroke="url(#skill__gradient)" transform="rotate(-180 100 100)" style=`animation-delay: ${skill[1]};`).skill__circle.skill__circle--above                     
-                                .skill__title #{skill[0]}
+            .values__pic
+              +image('content/values-backpack.png', 'values__img')
+            .values__content
+              .values__desc
+                h2.values__title.h3-title Чем я могу быть полезен вам
+                .values__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .skills-wrap
+                ul.user-skills        
+                  - var skills = [['Front-end', [['HTML5', '-25s'],['CSS3', '-13s'],['JavaScript', '-75s'],['JQuery', '-35s']]],['Workflow', [['Git', '-25s'],['Terminal', '-25s'],['Gulp', '-25s'],['Webpack', '-25s']]]]
+                    each item in skills 
+                      li.user-skills__item.skills-row 
+                        h3.skills-row__title #{item[0]}
+                        ul.skills-row__list
+                          each skill in item[1]
+                              li.skills-row__item
+                                .skill
+                                  svg(viewBox="0 0 154 154" preserveAspectRatio="none").skill__shape
+                                    defs.defs
+                                      linearGradient( x1="0%" y1="50%" x2="100%" y2="100%")#skill__gradient
+                                        stop(offset="60%" stop-color="#5500f2").skill__fill--start
+                                        stop(offset="100%" stop-color="#ad00ed").skill__fill--stop  
+                                    circle(r="65" cx="77" cy="77").skill__circle.skill__circle--under
+                                    circle(r="65" cx="77" cy="77" stroke="url(#skill__gradient)" transform="rotate(-180 77 77)" style=`animation-delay: ${skill[1]};`).skill__circle.skill__circle--above                     
+                                  .skill__title #{skill[0]}
 
         //Works
         section.works
@@ -116,7 +121,7 @@ html(lang="en")
                     +icon('arrow-down', 'slider__btn-icon slider__btn-icon--prev')
                   button.slider__btn.slider__btn--next
                     +icon('arrow-down', 'slider__btn-icon slider__btn-icon--next')
-                .slider__number 4
+                .slider__number 1
               .works__desc
                 .works__tags
                   - var tags = ['html', 'css', 'javascript']
@@ -161,7 +166,7 @@ html(lang="en")
 
           //Form
           section.form-section
-            .container
+            .container.form-section__container
               h2.form-section__title.h2-title Связаться со мной
               form.form(action="" name="form")
                 .form__row
@@ -177,33 +182,43 @@ html(lang="en")
                    textarea(id="comment" name="comment" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса" onfocus="this.placeholder='';").form__input.form__textarea
                 .form__row
                   button(type="submit").form__submit Отправить
-
-          //Footer
-          footer.footer
-            .container
-              .footer__row
+      
+      //Footer
+      footer.footer
+        .container.footer__container
+              .footer__left                
                 .footer__copy &copy; 2019
-                .footer__name  Игорь Ребрищев
+                .footer__info-left
+                  .footer__name  Игорь Ребрищев
+                  .footer__info-site  Личный сайт веб&#8209;разработчика
+                
+              .footer__right
                 nav.main-menu.footer__menu
                   - var menu = ['Главная','Обо мне','Навыки','Работы','Отзывы','Связаться']
-                  ul.main-menu__list
+                  ul.main-menu__list.footer__menu-list
                     each item, index in menu
                       li.main-menu__item
                         a(href="" class = "").main-menu__link.footer__menu-link #{item}
-              .footer__row
-                .footer__info-left  Личный сайт веб&#8209;разработчика
-                .footer__info-center
-                  .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-                  .socials
-                   - var socials = ['insta', 'vk', 'github']
-                   ul.socials__list
-                    each item in socials
-                      li.socials__item.footer__social-item
-                        a(href="#").socials__link.footer__social-link
-                          +icon(`${item}`, `socials__icon footer__social-icon socials__icon--${item}`)  
-                .footer__info-right 
-                  .footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                  .footer__quote-author Martin Golding      
+                .footer__info-wrap                
+                  .footer__info-center
+                    .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    .socials
+                    - var socials = ['insta', 'vk', 'github']
+                    ul.socials__list
+                      each item in socials
+                        li.socials__item.footer__social-item
+                          a(href="#").socials__link.footer__social-link
+                            +icon(`${item}`, `socials__icon footer__social-icon socials__icon--${item}`)  
+                  .footer__info-right 
+                    .footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    .footer__quote-author Martin Golding 
+
+      .one
+        .content Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi culpa facilis deserunt commodi rerum esse impedit. Labore, atque debitis in natus deserunt similique error suscipit libero aspernatur beatae dolore. Voluptas ex libero accusantium dicta consequuntur animi? Dignissimos, accusantium totam ipsum voluptas dolorum laboriosam ullam ad itaque deserunt, obcaecati unde nostrum veritatis optio esse rerum iste in sint! Excepturi dolores sit dolorem voluptatem quia eveniet iste! Nulla, at commodi odio ut aliquid error voluptatibus assumenda qui et amet consequuntur iure quasi expedita sit delectus necessitatibus non dolorum repudiandae nihil, numquam omnis quos! Natus, aliquam deserunt consequatur quo saepe suscipit veniam. Non reprehenderit sit sapiente qui, quasi numquam voluptas, praesentium velit ducimus rem quibusdam similique voluptatum doloremque. Natus mollitia distinctio vitae, dolorem blanditiis quidem commodi harum provident officiis! Excepturi facere libero dolore nobis? Fugit repellat et molestiae, sit possimus natus earum soluta. Nesciunt suscipit, quas quibusdam fugiat laborum dicta dolorem inventore voluptas, neque adipisci, pariatur itaque! Recusandae eaque, debitis nostrum iusto qui in aut magnam amet sapiente? Animi eveniet illo doloribus itaque suscipit aut! Omnis tempore beatae ipsam? Illum fugit excepturi est, veritatis consequuntur itaque placeat atque adipisci, non dolor voluptatem harum exercitationem, nesciunt deleniti. Dolorum accusamus nemo ducimus recusandae ab nam.
+        .paralax 
+          +image(`content/1.jpg`, 'paralax-img')   
+
+               
 
                 
                   

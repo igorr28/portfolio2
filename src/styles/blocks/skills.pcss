@@ -1,8 +1,32 @@
+.skills-wrap {
+    margin-left: 13%;
+
+    @include media(1330) {
+        margin-left: 0;
+    }
+
+    @include desktop {
+        margin-left: 11%;
+    }
+
+    @include media(930) {
+        margin-left: 0;
+    }
+
+    @include tab {
+        text-align: center;
+    }
+}
+
 .skill {
-    width: 200px;
-    height: 200px;
+
     fill: transparent;
     position: relative;
+
+    &__shape {
+        /* width: 154px;
+    height: 154px; */
+    }
 
     &__circle {
         &--under {
@@ -22,40 +46,76 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);        
+        transform: translate(-50%, -50%);
         color: rgba(#464d62, 0.5);
         font-size: 18px;
         font-weight: 700;
         line-height: 2;
     }
 
-    
+
 }
 
 @keyframes animateSkills {
-        from {
-            stroke-dashoffset: 421;
-        }
-         to {
-            stroke-dashoffset: 0;
-        }
+    from {
+        stroke-dashoffset: 421;
     }
-    
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
 .skills-row {
+    margin-bottom: 58px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 
     &__title {
         font-size: 24px;
-font-weight: 700;
-line-height: 2;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 50px;
+
+        @include tab {
+            margin-bottom: 34px;
+        }
     }
 
     &__list {
         display: flex;
         flex-wrap: wrap;
+        margin: 0 -20px;
+
+        @include desktop {
+            margin: 0 -15px;
+        }
+
+        @include media(850) {
+            margin: 0 -5px;
+        }
+
+        @include tab {
+            justify-content: center;
+        }
     }
 
+    &__item {
+        width: calc(25% - 40px);
+        min-width: 125px;
+        margin: 0 20px;
+
+        @include desktop {
+            width: calc(25% - 30px);
+            margin: 0 15px;
+        }
+
+        @include media(850) {
+            width: calc(25% - 10px);
+            margin: 0 5px;
+        }
     }
 
-.skills-wrap {
-    margin-left: 42%;
 }

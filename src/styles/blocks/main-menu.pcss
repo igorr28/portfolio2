@@ -1,11 +1,11 @@
 .main-menu {
 
-    &__list{
+    &__list {
         display: flex;
         align-items: center;
         line-height: 1.875;
-        margin: 0 -30px;
-    }   
+
+    }
 
     &__link {
         display: block;
@@ -14,16 +14,69 @@
         transition: 0.3s;
 
         &:hover {
-           color: #5500f2;
+            color: #5500f2;
             /* font-weight: 600; */
             border-bottom-color: #5500f2;
-        }        
+        }
+
+
     }
 }
 
+.header__menu {
+    margin: 0 auto;
 
+    @include tab {
+        display: none;
+    }
+}
+
+.header__menu-link {
+
+    @include media(1000) {
+        padding: 14px;
+    }
+
+}
+
+.footer__menu {
+    margin-left: -30px;
+    margin-bottom: 55px;
+
+    @include media(1000) {
+        margin-left: -12px;
+    }
+
+    @include tab {
+        margin: -10px 0 50px -34px;
+    }
+
+    @include media(520) {
+            margin: 0 0 20px 0;
+        }
+}
+
+.footer__menu-list {
+    @include tab {
+        flex-wrap: wrap;
+    }
+}
 
 .footer__menu-link {
     padding-top: 0;
     padding-bottom: 0;
+
+
+    @include media(1000) {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    @include tab {
+        padding: 10px 34px;
+    }
+
+    @include media(520) {
+           padding: 16px 30px;
+        }
 }

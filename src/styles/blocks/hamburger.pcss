@@ -1,0 +1,44 @@
+.hamburger {
+    cursor: pointer;
+    margin-left: 90px;
+    display: none;
+
+    @include tab {
+        display: block;
+    }
+
+    @include media(460) {
+        margin-left: auto;
+    }
+
+    &__pic {
+        width: 24px;
+        height: 4px;
+        background-color: #464d62;
+        position: relative;
+        margin: 1rem 0;
+
+        &:after,
+        &:before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 4px;
+            background-color: #464d62;
+            position: absolute;
+
+        }
+
+        &:after {
+            top: 100%;
+            margin-top: 4px;
+        }
+
+        &:before {
+            bottom: 100%;
+            margin-bottom: 4px;
+        }
+
+
+    }
+}

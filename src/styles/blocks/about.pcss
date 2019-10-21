@@ -1,31 +1,67 @@
 .about {
     padding: 114px 0 270px 0;
 
+    @include tab {
+        padding: 100px 0 140px 0;
+    }
+
     &__container {
         max-width: 970px;
         display: flex;
+
+        @include media(670) {
+            flex-direction: column;
+        }
     }
 
     &__left {
-       width: 38%;
-       margin-right: 6%;
+        width: 38%;
+        margin-right: 6%;
+
+        @include media(670) {
+            width: 100%;
+            margin: 0 auto 60px;
+        }
     }
-    
+
     &__right {
         width: 56%;
         color: rgba(#464d62, .5);
         font-weight: 600;
         line-height: 1.875;
+
+        @include media(670) {
+            width: 72%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @include phones {
+            text-align: left;
+            width: 100%;
+            margin: 0;
+        }
     }
 
     &__avatar {
         width: 200px;
         margin: 0 auto 70px;
 
+        @include tab {
+            width: 172px;
+            margin: 0 auto 50px;
+        }
+
     }
 
     &__table {
         width: 100%;
+
+        @include media(670) {
+            width: 260px;
+            margin: 0 auto;
+
+        }
     }
 
     &__column {
@@ -33,43 +69,54 @@
         padding: 8px 0;
         font-weight: 600;
 
-        &--left {            
-        color: rgba(#464d62, .3);
+        &--left {
+            color: rgba(#464d62, .3);
         }
-        &--right {       
-        
-        }
+
+        &--right {}
     }
 
     &__hello {
         margin-bottom: 18px;
+
+        @include tab {
+            margin-bottom: 8px;
+        }
     }
 
-     &__title {
-         margin-bottom: 25px;
-     } 
+    &__title {
+        margin-bottom: 25px;
 
-     &__text {
-         margin-bottom: 90px;
-     }  
+        @include tab {
+            margin-bottom: 30px;
+        }
+    }
 
-     &__ps {
-         font-style: italic;
-         font-weight: 400;
-         position: relative;
+    &__text {
+        margin-bottom: 90px;
 
-         &:before {
-             content: '';
-             display: block;
-             width: 22px;
+        @include tab {
+            margin-bottom: 36px;
+        }
+    }
+
+    &__ps {
+        font-style: italic;
+        font-weight: 400;
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 22px;
             height: 22px;
             background: url(../images/content/about-star.png) no-repeat center;
             position: absolute;
             left: -40px;
             top: 8px;
-            
-         }
-     }
+
+        }
+    }
 
 
 }
