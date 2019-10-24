@@ -1,0 +1,22 @@
+.cross {
+    &:hover .cross__icon {
+        fill: #5500f2;
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        fill: #414c63;
+    }
+}
+
+.menu-modal__cross {
+    position: absolute;
+    top: 70px;
+    right: 45px;
+
+    @include phones {
+        top: 35px;
+        right: 35px;
+    }
+}

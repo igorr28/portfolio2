@@ -1,0 +1,48 @@
+.menu-modal {
+    width: 326px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    @include phones {
+        width: 100%;
+    }
+    
+
+    &__content {
+        color: #414c63;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 2;
+
+    }
+
+    &__menu {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__link {
+        padding: 10px 0;
+        text-align-last: left;
+        border-bottom: none;
+    }
+
+    &__socials-item {
+        margin-right: 40px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
