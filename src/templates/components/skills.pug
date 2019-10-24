@@ -1,0 +1,31 @@
+script(type="text/x-template")#skills-list
+    ul.user-skills      
+        li.user-skills__item.skills-row(v-for='skill in skills' :key='skill.skillsGroup') 
+                skills-row(
+                    :skill='skill'
+                )
+
+
+script(type="text/x-template")#skills-row 
+    .skills-row
+        h3.skills-row__title {{skill.skillsGroup}}
+        ul.skills-row__list
+            li.skills-row__item(v-for="(skillPercent, skillName) in skill.skills")
+                skill(
+                    :skillName="skillName"
+                    :skillPercent="skillPercent"
+                    )
+
+
+script(type="text/x-template")#skill
+    .skill
+        svg(viewBox="0 0 154 154" preserveAspectRatio="none").skill__shape
+            defs.defs
+                linearGradient( x1="0%" y1="50%" x2="100%" y2="100%")#skill__gradient
+                    stop(offset="60%" stop-color="#5500f2").skill__fill--start
+                    stop(offset="100%" stop-color="#ad00ed").skill__fill--stop  
+            circle(r="65" cx="77" cy="77").skill__circle.skill__circle--under
+            circle(r="65" cx="77" cy="77" stroke="url(#skill__gradient)" transform="rotate(-180 77 77)" v-bind:style="{'animation-delay': skillPercent}").skill__circle.skill__circle--above                     
+        .skill__title {{skillName}}
+                                  
+//-    var skills = [['Front-end', [['HTML5', '-25s'],['CSS3', '-13s'],['JavaScript', '-75s'],['JQuery', '-35s']]],['Workflow', [['Git', '-25s'],['Terminal', '-25s'],['Gulp', '-25s'],['Webpack', '-25s']]]]

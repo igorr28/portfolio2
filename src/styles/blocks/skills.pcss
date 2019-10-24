@@ -9,7 +9,7 @@
         margin-left: 11%;
     }
 
-    @include media(930) {
+    @include media(980) {
         margin-left: 0;
     }
 
@@ -67,11 +67,11 @@
 }
 
 .skills-row {
-    margin-bottom: 58px;
+    /* margin-bottom: 58px;
 
     &:last-child {
         margin-bottom: 0;
-    }
+    } */
 
     &__title {
         font-size: 24px;
@@ -93,7 +93,7 @@
             margin: 0 -15px;
         }
 
-        @include media(850) {
+        @include media(905) {
             margin: 0 -5px;
         }
 
@@ -112,10 +112,17 @@
             margin: 0 15px;
         }
 
-        @include media(850) {
+        @include media(905) {
             width: calc(25% - 10px);
             margin: 0 5px;
         }
     }
+}
 
+.user-skills__item {
+ margin-bottom: 58px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
