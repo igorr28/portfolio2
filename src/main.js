@@ -6,3 +6,7 @@ if (process.env.NODE_ENV === "development") {
 import "./scripts/skills";
 import "./scripts/menu-modal";
 import "./scripts/parallax";
+import "./scripts/reviews";
+import "./scripts/reviews-slider";
+
+

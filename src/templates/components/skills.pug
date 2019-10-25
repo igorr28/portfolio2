@@ -1,7 +1,7 @@
 script(type="text/x-template")#skills-list
     ul.user-skills      
         li.user-skills__item.skills-row(v-for='skill in skills' :key='skill.skillsGroup') 
-                skills-row(
+            skills-row(
                     :skill='skill'
                 )
 
@@ -28,4 +28,4 @@ script(type="text/x-template")#skill
             circle(r="65" cx="77" cy="77" stroke="url(#skill__gradient)" transform="rotate(-180 77 77)" v-bind:style="{'animation-delay': skillPercent}").skill__circle.skill__circle--above                     
         .skill__title {{skillName}}
                                   
-//-    var skills = [['Front-end', [['HTML5', '-25s'],['CSS3', '-13s'],['JavaScript', '-75s'],['JQuery', '-35s']]],['Workflow', [['Git', '-25s'],['Terminal', '-25s'],['Gulp', '-25s'],['Webpack', '-25s']]]]
+

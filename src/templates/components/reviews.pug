@@ -1,0 +1,19 @@
+script(type="text/x-template")#reviews-list
+    swiper(:options="swiperOption" ref="mySwiper").reviews__list         
+        swiper-slide.reviews__item(v-for="review in reviews") 
+            reviews-row(                
+                :review='review'                                
+            )    
+
+
+script(type="text/x-template")#reviews-row
+    .reviews__post
+        .reviews__post-text {{review.text}}
+        .reviews__post-user
+            .reviews__user-pic.avatar               
+                +image(`content/dk.jpg`, 'reviews__user-img')
+            .reviews__user-desc
+                .reviews__user-name {{review.name}}
+                .reviews__user-occ {{review.occ}}    
+
+
