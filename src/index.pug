@@ -31,9 +31,16 @@ html(lang="en")
           +icon('remove', 'cross__icon')
 
 
-      .wrapper__content       
+      .wrapper__content          
 
         .two-sections
+
+          .parallax-one#scene
+            .parallax-one__layer(data-deep="0.2")
+              +image(`content/parallax/p1-1.jpg`, 'parallax-one__img')
+            - for (var i = 2; i < 8; i++)           
+              .parallax-one__layer(data-deep=`${0.2*i}`)
+                +image(`content/parallax/p1-${i}.png`, 'parallax-one__img') 
         
           //First-screen 
           section.first-screen
@@ -141,6 +148,14 @@ html(lang="en")
                   span.link__text Посмотреть сайт
 
         .two-sections--bottom
+
+          .parallax-two
+            .parallax-two__layer(data-deep="0.2")
+              +image(`content/parallax/p2-1.jpg`, 'parallax-two__img')
+            - for (var i = 2; i < 7; i++)           
+              .parallax-two__layer(data-deep=`${0.17*i}`)
+                +image(`content/parallax/p2-${i}.png`, 'parallax-two__img') 
+
           //Triangles
           .triangles-bottom
             svg.triangles-bottom__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
@@ -222,10 +237,10 @@ html(lang="en")
       //- .test
       //-   .parallax-one
       //-     .parallax-one__layer(data-deep="0.2")
-      //-       +image(`content/p1-1.jpg`, 'parallax-one__img')
+      //-       +image(`content/parallax/p1-1.jpg`, 'parallax-one__img')
       //-     - for (var i = 2; i < 8; i++)           
       //-       .parallax-one__layer(data-deep=`${0.15*i}`)
-      //-         +image(`content/p1-${i}.png`, 'parallax-one__img')  
+      //-         +image(`content/parallax/p1-${i}.png`, 'parallax-one__img')  
       //-   .text
 
     include ./templates/entry.pug
