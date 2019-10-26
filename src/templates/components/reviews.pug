@@ -1,8 +1,8 @@
 script(type="text/x-template")#reviews-list
-    swiper(:options="swiperOption" ref="mySwiper").reviews__list         
-        swiper-slide.reviews__item(v-for="review in reviews") 
+    flickity(ref="flickity" :options="flickityOptions").reviews__list         
+        .reviews__item.carousel-cell(v-for="review in reviews" ) 
             reviews-row(                
-                :review='review'                                
+                :review='review'                            
             )    
 
 

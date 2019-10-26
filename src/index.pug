@@ -167,12 +167,24 @@ html(lang="en")
               .reviews__row
                 h2.reviews__title.h2-title Что обо мне говорят
                 .reviews__btns
-                  button.reviews__btn.swiper-button-prev
+                  button(@click="previous()"  :disabled="false").reviews__btn.reviews__btn--prev
                     +icon('arrow-down', 'reviews__btn-icon reviews__btn-icon--prev') 
-                  button.reviews__btn.swiper-button-next
+                  button(@click="next()"  :disabled="false").reviews__btn.reviews__btn--next
                     +icon('arrow-down', 'reviews__btn-icon reviews__btn-icon--next')
               .reviews__items
-                #reviews-component  
+                //- #reviews-component  
+                - var reviews = [['Ковальчук Дмитрий', 'Основатель Loftschool', 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', 'dk'], ['Владимир Сабанцев', 'Преподаватель', 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах', 'vs'], ['Ковальчук Дмитрий', 'Основатель Loftschool', 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', 'dk'], ['Владимир Сабанцев', 'Преподаватель', 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах', 'vs'], ['Владимир Сабанцев', 'Преподаватель', 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах', 'vs'], ['Ковальчук Дмитрий', 'Основатель Loftschool', 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', 'dk']]
+                  flickity(ref="flickity" :options="flickityOptions").reviews__list
+                    each item in reviews
+                      .reviews__item.carousel-cell
+                        .reviews__post
+                          .reviews__post-text #{item[2]}
+                          .reviews__post-user
+                            .reviews__user-pic.avatar
+                              +image(`content/${item[3]}.jpg`, 'reviews__user-img')
+                            .reviews__user-desc
+                              .reviews__user-name #{item[0]}
+                              .reviews__user-occ #{item[1]}
                 
 
           //Form
@@ -224,16 +236,7 @@ html(lang="en")
                     .footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                     .footer__quote-author Martin Golding 
 
-      .test
-        button.reviews__btn.swiper-button-prev
-          +icon('arrow-down', 'reviews__btn-icon reviews__btn-icon--prev') 
-        button.reviews__btn.swiper-button-next
-          +icon('arrow-down', 'reviews__btn-icon reviews__btn-icon--next')
-        swiper(:options="swiperOption" ref="mySwiper")         
-        
-          - for (var i = 0; i < 7; i++)
-            swiper-slide.reviews__item lorem2
-  
+      
 
     include ./templates/entry.pug
 

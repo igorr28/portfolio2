@@ -1,19 +1,18 @@
 import Vue from "vue";
 
+
 const reviewsRow = {
-    template: "#reviews-row",
-    
+    template: "#reviews-row",    
     props: {
         review: Object
     }
 };
 
-var rev = new Vue({
+ new Vue({
     el: "#reviews-component",
     template: "#reviews-list",
     components: {
-        reviewsRow
-        
+        reviewsRow        
     },
     data: {
         reviews: []
@@ -23,4 +22,8 @@ var rev = new Vue({
         this.reviews = data;
     }
 });
+
+
+
+
 
